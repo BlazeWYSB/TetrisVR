@@ -15,7 +15,7 @@ public class type_Transform : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.T))
         { 
-            partA.transform.RotateAround(partB.transform.position+new Vector3(10,0,0), Vector3.up, 90);
+            partA.transform.RotateAround(partB.transform.position+new Vector3(0.5f,0,0), Vector3.up, 90);
         }
     }
 }
