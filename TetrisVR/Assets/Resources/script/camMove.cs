@@ -19,16 +19,31 @@ public class camMove : MonoBehaviour
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            moveSpeed = 8.0f;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            moveSpeed = 2.0f;
+        }
         camVR.transform.Translate(Vector3.forward * v * moveSpeed * Time.deltaTime);
         camVR.transform.Translate(Vector3.right * h * moveSpeed * Time.deltaTime);
-        if (Input.GetKey(KeyCode.F))
-        {
-            camVR.transform.Rotate(Vector3.right * Time.deltaTime * rotationSpeed);
-        }
         if (Input.GetKey(KeyCode.R))
         {
+            camVR.transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.F))
+        {
+            camVR.transform.Translate(Vector3.down * moveSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.T))
+        {
             camVR.transform.Rotate(Vector3.right * Time.deltaTime * -rotationSpeed);
+        }
+        if (Input.GetKey(KeyCode.G))
+        {
+            camVR.transform.Rotate(Vector3.right * Time.deltaTime * rotationSpeed);
         }
         if (Input.GetKey(KeyCode.Q))
         {

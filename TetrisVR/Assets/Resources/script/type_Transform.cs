@@ -13,7 +13,7 @@ public class type_Transform : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.Space))
         { 
             partA.transform.RotateAround(partB.transform.position+new Vector3(0.5f,0,0), Vector3.up, 90);
         }

@@ -1,5 +1,2 @@
 Base path: 'E:/unity neo/Unity/2020.1.0b16/Editor/Data', plugins path 'E:/unity neo/Unity/2020.1.0b16/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
-Unhandled exception: Protocol error - unexpected end of data (did the Editor crash?)
-
-Quitting shader compiler process

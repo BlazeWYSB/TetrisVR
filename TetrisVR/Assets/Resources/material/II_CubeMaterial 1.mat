@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: II_CubeMaterial
+  m_Name: II_CubeMaterial 1
   m_Shader: {fileID: 4800000, guid: d34ddb690407bf04c8c9788205512415, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -136,7 +136,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _BumpScale: 0.73
+    - _BumpScale: 1.27
     - _CustomShadow2nd: 0
     - _Cutoff: 0.5
     - _CutoutCutoutAdjust: 0.544
@@ -181,7 +181,7 @@ Material:
     - _PointShadowborder: 0.5
     - _PointShadowborderBlur: 0.01
     - _ReflectionNormalMix: 1
-    - _ReflectionReflectionPower: 0.8
+    - _ReflectionReflectionPower: 1
     - _ReflectionShadeMix: 0
     - _ReflectionSuppressBaseColorValue: 1
     - _RimBlend: 1
