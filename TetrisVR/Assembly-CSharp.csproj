@@ -54,9 +54,10 @@
   <ItemGroup>
     <Compile Include="Assets\Resources\script\type_Transform.cs" />
     <Compile Include="Assets\Resources\script\Game_maintimelineContoller.cs" />
+    <Compile Include="Assets\Resources\script\ActiveObjectrigger.cs" />
     <Compile Include="Assets\FastMobileBloom\FastMobileBloom.cs" />
     <Compile Include="Assets\Resources\script\camMove.cs" />
-    <Compile Include="Assets\Resources\script\ActiveObjectrigger.cs" />
+    <Compile Include="Assets\Resources\script\Collider_bool.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\arktoon Shaders\Shaders\K2Ex_3ChCutout.shader" />

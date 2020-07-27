@@ -5,12 +5,14 @@ using System.Collections.Generic;
 public class Global : MonoBehaviour
 {
     public static bool isTriggerHappend;
+    //这个bool分别是长宽高
+    public static bool[,,] ColliderState = new bool[8, 8, 8];
 }
-
 
 
 public class Game_maintimelineContoller : MonoBehaviour
 {
+    public GameObject ColliderFather;
     GameObject ActiveObject;
     GameObject NextObject;
     GameObject PreviousObject;
@@ -21,12 +23,26 @@ public class Game_maintimelineContoller : MonoBehaviour
     GameObject Trans_block_perfab;
     Vector3 start_position;
     Quaternion start_rotation;
-    
 
-    // Start is called before the first frame update
+    void ColliderCreater()
+    {   
+        //长宽和高，便于修改
+        int Space_a = 8;
+        GameObject ColliderPreb = Resources.Load("Prebs/ColliderPrefabs") as GameObject;
+        GameObject ColliderInst;
+        for (int i = 0; i < 512; i++)
+        {   
+            //这里vector3的参数分别是长高宽
+            ColliderInst=Instantiate(ColliderPreb, new Vector3(i % Space_a, 0.5f + i / (Space_a * Space_a), (i / Space_a) % Space_a), new Quaternion(90, 0, 0, 0), ColliderFather.transform);
+            ColliderInst.name = "" + i;
+        }
+    }
+
+// Start is called before the first frame update
     void Start()
     {
-        start_position = new Vector3(0f, 10.5f, 0f);
+        ColliderCreater();
+        start_position = new Vector3(4f, 10.5f, 4f);
         start_rotation = new Quaternion(90, 0, 0, 0);
         Global.isTriggerHappend = false;
         L_block_perfab = Resources.Load("Prebs/L_Object") as GameObject;
@@ -75,11 +91,11 @@ public class Game_maintimelineContoller : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            ActiveObject.transform.RotateAround(ActiveObject.transform.FindChild("Cube").localPosition, Vector3.up, 90);
+            ActiveObject.transform.RotateAround(ActiveObject.transform.Find("Cube").localPosition, Vector3.up, 90);
         }
         if (Input.GetKeyDown(KeyCode.Keypad3))
         {
-            ActiveObject.transform.RotateAround(ActiveObject.transform.FindChild("Cube").localPosition, Vector3.right, 90);
+            ActiveObject.transform.RotateAround(ActiveObject.transform.Find("Cube").localPosition, Vector3.right, 90);
         }
     }
 
