@@ -13,6 +13,7 @@ public class Global : MonoBehaviour
 public class Game_maintimelineContoller : MonoBehaviour
 {
     public GameObject ColliderFather;
+    GameObject ColliderTry;
     GameObject ActiveObject;
     GameObject NextObject;
     GameObject PreviousObject;
@@ -23,6 +24,25 @@ public class Game_maintimelineContoller : MonoBehaviour
     GameObject Trans_block_perfab;
     Vector3 start_position;
     Quaternion start_rotation;
+
+    void ColliderTest()
+    {
+        int Space_a = 8;
+        GameObject ColliderTry = Resources.Load("Prebs/ColliderTry") as GameObject;
+        for (int i = 0; i < 8; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                for (int k = 0; k < 8; k++)
+                {
+                    if (Global.ColliderState[i, j, k] == true)
+                    {
+                        Instantiate(ColliderTry, new Vector3(i+10, 0.5f + k, j), new Quaternion(90, 0, 0, 0));
+                    }
+                }
+            }
+        }
+    }
 
     void ColliderCreater()
     {   
@@ -52,7 +72,7 @@ public class Game_maintimelineContoller : MonoBehaviour
         PreviousObject = Resources.Load("Prebs/Plane") as GameObject;
         NextObject = ramdom_block();
         ActiveObject = Instantiate(ramdom_block(), start_position, start_rotation);
-        InvokeRepeating("Block_Drop", 1f, 0.8f);
+        InvokeRepeating("Block_Drop", 1f, 1f);
     }
 
 
@@ -111,6 +131,7 @@ public class Game_maintimelineContoller : MonoBehaviour
     // Update is called once per frame
     void Block_Drop()
     {
+        ColliderTest();
         if (Global.isTriggerHappend == false) 
             ActiveObject.transform.Translate(Vector3.up);
         if (Global.isTriggerHappend == true)

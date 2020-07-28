@@ -12,6 +12,7 @@ public class Collider_bool : MonoBehaviour
         ColliderID = (int)float.Parse(this.name);
         Global.ColliderState[ColliderID % Space_a, (ColliderID / Space_a) % Space_a, ColliderID / (Space_a * Space_a)] = true;
         //Debug.Log("[" + ColliderID % Space_a + "," + (ColliderID / Space_a) % Space_a + "," + ColliderID / (Space_a * Space_a) + "]" + Global.ColliderState[ColliderID % Space_a, (ColliderID / Space_a) % Space_a, ColliderID / (Space_a * Space_a)]);
+
     }
     void OnTriggerExit(Collider collision)
     {
