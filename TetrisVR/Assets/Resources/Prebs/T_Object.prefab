@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3402656098032896542}
   - component: {fileID: 3695653068252337530}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Cube0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8815924710425384362}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6285203410198478920
 MeshFilter:
@@ -127,8 +127,8 @@ GameObject:
   - component: {fileID: 5854039910637951889}
   - component: {fileID: 5337450136587745300}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Cube1
+  m_TagString: middle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8815924710425384362}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6891743427830462911
 MeshFilter:
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 6063104895079029424}
   - component: {fileID: 3331445826052914937}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Cube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258,7 +258,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8815924710425384362}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7871671297981082663
 MeshFilter:
@@ -366,10 +366,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 5591465326978662379}
   - {fileID: 287665101721778994}
   - {fileID: 4074853695035292229}
   - {fileID: 5102618013920398575}
-  - {fileID: 5591465326978662379}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 76076100126322429}
   - component: {fileID: 4147960648879276707}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Cube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,7 +405,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8815924710425384362}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2059081211862041026
 MeshFilter:

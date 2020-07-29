@@ -25,15 +25,34 @@ public class Game_maintimelineContoller : MonoBehaviour
     Vector3 start_position;
     Quaternion start_rotation;
 
+    Vector3 currentcube1;
+    Vector3 currentcube2;
+    Vector3 currentcube3;
+    Vector3 currentcube4;
+
+    void GetCurrentVector()
+    {
+        foreach (Transform child in this.transform)
+        {
+            Debug.Log(child.name);
+        }
+    }
+
     void ColliderTest()
     {
         int Space_a = 8;
+        GameObject[] tmp;
         GameObject ColliderTry = Resources.Load("Prebs/ColliderTry") as GameObject;
-        for (int i = 0; i < 8; i++)
+        tmp = GameObject.FindGameObjectsWithTag("destory");
+        for (int m = 0; m < tmp.Length; m++)
         {
-            for (int j = 0; j < 8; j++)
+            Destroy(tmp[m]); //隐藏对象
+        }
+        for (int i = 0; i < Space_a; i++)
+        {
+            for (int j = 0; j < Space_a; j++)
             {
-                for (int k = 0; k < 8; k++)
+                for (int k = 0; k < Space_a; k++)
                 {
                     if (Global.ColliderState[i, j, k] == true)
                     {
@@ -70,53 +89,59 @@ public class Game_maintimelineContoller : MonoBehaviour
         I_block_perfab = Resources.Load("Prebs/I_Object") as GameObject;
         Zeta_block_perfab = Resources.Load("Prebs/Zeta_Object") as GameObject;
         PreviousObject = Resources.Load("Prebs/Plane") as GameObject;
-        NextObject = ramdom_block();
-        ActiveObject = Instantiate(ramdom_block(), start_position, start_rotation);
-        InvokeRepeating("Block_Drop", 1f, 1f);
+        NextObject = ramdom_block(PreviousObject);
+        ActiveObject = Instantiate(ramdom_block(PreviousObject), start_position, start_rotation);
+        InvokeRepeating("Block_Drop", 1f, 15f);
     }
 
 
     //随机选取方块函数
-    GameObject ramdom_block()
+    GameObject ramdom_block(GameObject a)
     {
-        int tmp = Random.Range(0, 115);
-        if (tmp <= 28)
+        int tmp = Random.Range(0, 5);
+        if (tmp == 0 && a != L_block_perfab)
             return L_block_perfab;
-        else if (tmp <= 57)
+        else if (tmp == 1 && a != T_block_perfab)
             return T_block_perfab;
-        else if (tmp <= 86)
+        else if (tmp == 2 && a != I_block_perfab)
             return I_block_perfab;
-        else
+        else if (tmp == 3 && a != Zeta_block_perfab)
             return Zeta_block_perfab;
+        else
+            return ramdom_block(a);
     }
 
     //小键盘移动方块
     private void Update()
     {
+        ColliderTest();
+
+        //movescript
         if (Input.GetKeyDown(KeyCode.Keypad8))
         {
-            ActiveObject.transform.Translate(Vector3.forward * -1);
+            ActiveObject.transform.position += Vector3.forward;
         }
         if (Input.GetKeyDown(KeyCode.Keypad2))
         {
-            ActiveObject.transform.Translate(Vector3.forward);
+            ActiveObject.transform.position -= Vector3.forward;
         }
         if (Input.GetKeyDown(KeyCode.Keypad4))
         {
-            ActiveObject.transform.Translate(Vector3.left);
+            ActiveObject.transform.position +=Vector3.left;
         }
         if (Input.GetKeyDown(KeyCode.Keypad6))
         {
-            ActiveObject.transform.Translate(Vector3.right);
+            ActiveObject.transform.position += Vector3.right;
         }
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            ActiveObject.transform.RotateAround(ActiveObject.transform.Find("Cube").localPosition, Vector3.up, 90);
+            ActiveObject.transform.RotateAround(ActiveObject.transform.localPosition, Vector3.up, 90);
         }
         if (Input.GetKeyDown(KeyCode.Keypad3))
         {
-            ActiveObject.transform.RotateAround(ActiveObject.transform.Find("Cube").localPosition, Vector3.right, 90);
+            ActiveObject.transform.RotateAround(ActiveObject.transform.localPosition, Vector3.right, 90);
         }
+        //movescript
     }
 
     void OnTriggerEnter(Collider collision)
@@ -131,13 +156,13 @@ public class Game_maintimelineContoller : MonoBehaviour
     // Update is called once per frame
     void Block_Drop()
     {
-        ColliderTest();
+       
         if (Global.isTriggerHappend == false) 
-            ActiveObject.transform.Translate(Vector3.up);
+            ActiveObject.transform.position -= Vector3.up;
         if (Global.isTriggerHappend == true)
         {
             Debug.Log("碰撞发生");
-            NextObject = ramdom_block();
+            NextObject = ramdom_block(NextObject);
             foreach (Transform child in ActiveObject.transform)
             {
                 Destroy(child.GetComponent<Rigidbody>());

@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 3484182128621320163}
   - component: {fileID: 7850097042931442555}
   m_Layer: 0
-  m_Name: Cube (2)
-  m_TagString: Untagged
+  m_Name: Cube1
+  m_TagString: middle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1872590793038543156}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6355154256163505142
 MeshFilter:
@@ -154,10 +154,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5152352555002668932}
-  - {fileID: 2257739102603936361}
-  - {fileID: 38535123875067102}
   - {fileID: 4419209826398457094}
+  - {fileID: 38535123875067102}
+  - {fileID: 2257739102603936361}
+  - {fileID: 5152352555002668932}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 1127955623802784141}
   - component: {fileID: 4811041600531367408}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Cube0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +194,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1872590793038543156}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6313797667783704175
 MeshFilter:
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 5540178951111231958}
   - component: {fileID: 1134940402119121146}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Cube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -321,7 +321,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1872590793038543156}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5331925348759848518
 MeshFilter:
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 4185174781466121614}
   - component: {fileID: 6305418233257464784}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Cube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,7 +448,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1872590793038543156}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &700291370176629488
 MeshFilter:
