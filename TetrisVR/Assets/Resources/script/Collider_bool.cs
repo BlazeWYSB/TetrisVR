@@ -5,7 +5,7 @@ using UnityEngine;
 public class Collider_bool : MonoBehaviour
 {
     int ColliderID;
-    int Space_a = 8;
+    int Space_a = 9;
     // Start is called before the first frame update
     void OnTriggerEnter(Collider collision)
     {
@@ -18,6 +18,6 @@ public class Collider_bool : MonoBehaviour
     {
         ColliderID = (int)float.Parse(this.name);
         Global.ColliderState[ColliderID % Space_a, (ColliderID / Space_a) % Space_a, ColliderID / (Space_a * Space_a)] = false;
-        Debug.Log("[" + ColliderID % Space_a + "," + (ColliderID / Space_a) % Space_a + "," + ColliderID / (Space_a * Space_a) + "]" + Global.ColliderState[ColliderID % Space_a, (ColliderID / Space_a) % Space_a, ColliderID / (Space_a * Space_a)]);
+        //Debug.Log("[" + ColliderID % Space_a + "," + (ColliderID / Space_a) % Space_a + "," + ColliderID / (Space_a * Space_a) + "]" + Global.ColliderState[ColliderID % Space_a, (ColliderID / Space_a) % Space_a, ColliderID / (Space_a * Space_a)]);
     }
 }
