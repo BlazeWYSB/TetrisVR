@@ -1,2 +1,0 @@
-F:\TetrisVR\TetrisVR\obj\Debug\Assembly-CSharp-Editor.csprojAssemblyReference.cache
-F:\TetrisVR\TetrisVR\obj\Debug\Assembly-CSharp-Editor.csproj.CoreCompileInputs.cache

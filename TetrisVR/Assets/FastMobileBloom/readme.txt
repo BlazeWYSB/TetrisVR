@@ -1,1 +1,0 @@
-Just bloom, but faster that unity standart mobile bloom. All parametra are equal to "Bloom Optimized" from unity standart asssets.
